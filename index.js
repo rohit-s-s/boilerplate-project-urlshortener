@@ -33,13 +33,13 @@ app.post("/api/shorturl", (req,res)=>{
     return res.json({error: "invalid url"})
   }
   shortUrl = Math.floor(Math.random() * 10);
-  res.json({"orginal url":url,"short url":shortUrl})
+  res.json({"original_url":url,"short_url":shortUrl})
 })
 
 app.get("/api/shorturl/:shortUrlId",(req,res)=>{
   const shortUrlId = parseInt(req.params.shortUrlId);
   if(shortUrl === shortUrlId ) res.redirect(url)
-    res.json({"error":"Wrong format"})
+    res.json({"error": 'invalid url'})
 })
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
