@@ -41,7 +41,7 @@ app.post("/api/shorturl",(req, res) => {
 app.get("/api/shorturl/:shortUrlId", (req, res) => {
   const shortUrlId = parseInt(req.params.shortUrlId);
   if (shortUrl === shortUrlId) res.redirect(url);
-  res.json({ error: "invalid url" });
+  res.json({ "error": "invalid url" });
 });
 app.listen(port, function () {
   console.log(`Listening on port ${port}`);
