@@ -30,7 +30,7 @@ app.post("/api/shorturl", (req,res)=>{
   new URL(url);
 }
   catch (err) {
-    return res.json({error: "invalid url"})
+    return res.json({ "error": 'invalid url' })
   }
   shortUrl = Math.floor(Math.random() * 10);
   res.json({"original_url":url,"short_url":shortUrl})
